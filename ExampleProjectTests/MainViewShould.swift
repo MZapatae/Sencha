@@ -53,4 +53,33 @@ class MainViewShould: XCTestCase {
 
         assertVisible(.text("Sencha Example"))
     }
+    
+    func test_be_able_to_select_one_cell_and_return_to_select_another_one_fail() {
+        tap(.firstElementWith(.text("5")))
+        tap(.text("Sencha Example"))
+        tap(.firstElementWith(.text("8")))
+        tap(.text("Sencha Example"))
+        tap(.firstElementWith(.text("8")))
+        tap(.text("Sencha Example"))
+        tap(.firstElementWith(.text("5")))
+        tap(.text("Sencha Example"))
+        tap(.firstElementWith(.text("5")))
+        tap(.text("Sencha Example"))
+        tap(.firstElementWith(.text("8")))
+    }
+    
+    func test_be_able_to_select_one_cell_and_return_to_select_another_one_success() {
+        tap(.interactableElementWith(.text("5")))
+        tap(.text("Sencha Example"))
+        tap(.interactableElementWith(.text("8")))
+        tap(.text("Sencha Example"))
+        tap(.interactableElementWith(.text("8")))
+        tap(.text("Sencha Example"))
+        tap(.interactableElementWith(.text("5")))
+        tap(.text("Sencha Example"))
+        tap(.interactableElementWith(.text("5")))
+        tap(.text("Sencha Example"))
+        tap(.interactableElementWith(.text("8")))
+    }
+    
 }

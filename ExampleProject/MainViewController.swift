@@ -21,6 +21,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.accessibilityIdentifier = AccessibilityID.tableView
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     @IBAction func editButtonPressed(_ sender: Any) {
         
         sectionTitle = sectionTitle == "Normal Mode" ? "Edit Mode" : "Normal Mode"
